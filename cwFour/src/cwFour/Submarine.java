@@ -8,8 +8,13 @@ package cwFour;
  *
  */
 public class Submarine extends Ship {
-	public String getShipType(){
+	Submarine(){
+		this.length = 1;
+		this.hit[0] = false;
+	}
+	@Override public String getShipType(){
 		String shipType = "Submarine";
 		return shipType;
 	}
+	
 }

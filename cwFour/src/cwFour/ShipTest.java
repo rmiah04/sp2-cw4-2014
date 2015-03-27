@@ -33,12 +33,15 @@ public class ShipTest {
 		// set horizontal to false
 		tship.setHorizontal(false);
 		assertEquals(false, tship.isHorizontal());
+		
 	}
 
 	// Test the extended class submarine
 	@Test
 	public void testSubmarine() {
 		Submarine sub = new Submarine();
+		//ship length
+		assertEquals(1, sub.length);
 		// correct retrieval of bow column.
 		assertEquals(0, sub.getBowColumn());
 		// set new bow column
@@ -56,6 +59,14 @@ public class ShipTest {
 		assertEquals(false, sub.isHorizontal());
 		// check if the correct name is returned
 		assertEquals("Submarine", sub.getShipType());
+		// correct retrieval of sunken status
+		assertEquals(false, sub.isSunk());
+		sub.hit[0] = true;
+		assertEquals(true, sub.isSunk());
+		//print character return
+		assertEquals("X", sub.toString());
+		sub.hit[0] = false;
+		assertEquals("-", sub.toString());
 	}
 
 }

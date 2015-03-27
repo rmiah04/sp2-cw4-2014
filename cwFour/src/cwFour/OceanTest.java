@@ -18,7 +18,8 @@ public class OceanTest {
 	 */
 	@Test
 	public void testPrintOcean() {
-		Ocean.getOcean();
+		Ocean oTest = new Ocean();
+		oTest.getOcean();
 	}
 
 }

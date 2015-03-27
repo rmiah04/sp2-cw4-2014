@@ -3,12 +3,25 @@ package cwFour;
 import java.util.Scanner;
 
 public class Ocean {
-	static Ship[][] ships = new Ship[10][10];
+	
+	Ship[][] ships = new Ship[10][10];
+	/**
+	 * creates an empty ocean
+	 */
+	Ocean(){
+	for(int i = 0 ; i < 10 ; i++) {
+		for(int j = 0; j < 10 ; j++) {
+		this.ships[i][j] = new EmptySea();
+		}
+		} 
+	}
 	int shotsFired;
 	int hitCount;
 	int shipsSunk;
-	/*This method prints the status of the ocean after every shot fired.*/
-	static void print(){
+	/**
+	 * This method prints the status of the ocean after every shot fired
+	 */
+	void print(){
 		System.out.println("   0 1 2 3 4 5 6 7 8 9");
 		System.out.println("  ____________________");
         for(int row=0 ; row < 10 ; row++ ){
@@ -27,8 +40,8 @@ public class Ocean {
             System.out.println();
         }
 	}
-	static void getOcean(){
-		print();
+	void getOcean(){
+		this.print();
 	}
 	/**
 	 * @return the shotsFired
@@ -47,5 +60,13 @@ public class Ocean {
 	 */
 	public int getShipsSunk() {
 		return shipsSunk;
+	}
+	public boolean isGameOver(){
+		boolean gameOver = false;
+		if(this.getShipsSunk() == 10){
+			gameOver=true;
+		}
+		return gameOver;
+		
 	}
 }

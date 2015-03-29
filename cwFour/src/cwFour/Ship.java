@@ -1,4 +1,5 @@
 package cwFour;
+import java.util.Random;
 
 /**
  * @author HP
@@ -99,7 +100,7 @@ public class Ship {
 				if(this.hit[i]) {
 					sunk = "S";
 				}
-				}
+			}
 		}
 		return sunk; 
 	 }

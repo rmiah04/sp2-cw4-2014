@@ -27,15 +27,7 @@ public class Ocean {
         for(int row=0 ; row < 10 ; row++ ){
             System.out.print((row+0)+"|");
             for(int column=0 ; column < 10 ; column++ ){
-                //if(ocean[row][column]==-1){
                 	System.out.print(" " + ships[row][column]);
-             /*       System.out.print("\t"+"~");
-                }else if(ocean[row][column]==0){
-                    System.out.print("\t"+"*");
-                }else if(ocean[row][column]==1){
-                    System.out.print("\t"+"X");*/
-                //}
-                
             }
             System.out.println();
         }
@@ -61,12 +53,15 @@ public class Ocean {
 	public int getShipsSunk() {
 		return shipsSunk;
 	}
+	/**
+	 * checks the if game over before starting a turn.
+	 * @return end game status
+	 */
 	public boolean isGameOver(){
 		boolean gameOver = false;
 		if(this.getShipsSunk() == 10){
 			gameOver=true;
 		}
 		return gameOver;
-		
 	}
 }

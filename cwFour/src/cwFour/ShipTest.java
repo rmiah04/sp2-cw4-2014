@@ -68,5 +68,71 @@ public class ShipTest {
 		sub.hit[0] = false;
 		assertEquals("-", sub.toString());
 	}
+	// Test the extended class Battleship
+		@Test
+		public void testBattleship() {
+			Battleship bat = new Battleship();
+			//ship type
+			assertEquals("Battleship", bat.getShipType());
+			//ship length
+			assertEquals(4, bat.length);
+			// correct retrieval of sunken status
+			assertEquals(false, bat.isSunk());
+			assertEquals("-", bat.toString());
+			bat.hit[0] = true;
+			bat.hit[1] = true;
+			bat.hit[2] = true;
+			bat.hit[3] = true;
+			assertEquals(true, bat.isSunk());
+			//print character return
+			assertEquals("X", bat.toString());
+		}
+		// Test the extended class Cruiser
+		@Test
+		public void testCruiser() {
+			Cruiser cru = new Cruiser();
+			//ship type
+			assertEquals("Cruiser", cru.getShipType());
+			//ship length
+			assertEquals(3, cru.length);
+			// correct retrieval of sunken status
+			assertEquals(false, cru.isSunk());
+			assertEquals("-", cru.toString());
+			cru.hit[0] = true;
+			cru.hit[1] = true;
+			cru.hit[2] = true;
+			assertEquals(true, cru.isSunk());
+			//print character return
+			assertEquals("X", cru.toString());
+		}
+		// Test the extended class Destroyer
+		@Test
+		public void testDestroyer() {
+			Destroyer des = new Destroyer();
+			//ship type
+			assertEquals("Destroyer", des.getShipType());
+			//ship length
+			assertEquals(2, des.length);
+			// correct retrieval of sunken status
+			assertEquals(false, des.isSunk());
+			assertEquals("-", des.toString());
+			des.hit[0] = true;
+			des.hit[1] = true;
+			assertEquals(true, des.isSunk());
+			//print character return
+			assertEquals("X", des.toString());
+		}
+		// Test the extended class EmptySea
+		@Test
+		public void testEmptySea() {
+			EmptySea es = new EmptySea();
+			//ship type
+			assertEquals("EmptySea", es.getShipType());
+			//ship length
+			assertEquals(1, es.length);
+			// correct retrieval of sunken status
+			assertEquals(false, es.isSunk());
+			assertEquals("-", es.toString());
+		}
 
 }
